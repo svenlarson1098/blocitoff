@@ -8,18 +8,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
+  <div class="container-fluid">
+  <div class="navbar-header">
+  <a class="navbar-brand">Blocitoff</a>
+  </div>
     <ul class="nav nav-tabs">
-      <li><%= link_to "Home", root_path %></li>
+      <li class="<%= 'active' if current_page?(welcome_index_path) %>"><%= link_to "Home", root_path %></li>
       <li><%= link_to "About", welcome_about_path %></li>
-        <div class='pull-right user-info'>
+        <div class='nav navbar-nav navbar-right'>
         <% if user_signed_in? %>
-          Signed in as: <strong><%= current_user.email %></strong> |
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - 
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-          <% else %>
-          <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
-          <% end %>
+          <li><%= link_to 'Hello, ' + current_user.email, users_show_path, :class => 'navbar-link' %></li>
+          <li><%= link_to '<span class= "glyphicon glyphicon-cog"></span> Edit Profile'.html_safe, edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to '<span class= "glyphicon glyphicon-log-out"></span> Sign Out'.html_safe, destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+        <% else %>
+          <li><%= link_to '<span class= "glyphicon glyphicon-log-in"></span> Log In'.html_safe, new_user_session_path, :class => 'navbar-link' %></li>
+        <% end %>
        </div>
      </ul>
           <% if flash[:notice] %>
