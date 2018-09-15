@@ -13,3 +13,4 @@ class ItemsController < ApplicationController
       redirct_to user_path(@user.id)
   end
 end
+end
