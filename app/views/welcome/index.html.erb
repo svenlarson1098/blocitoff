@@ -1,4 +1,20 @@
-<div class="jumbotron">
-<h1>BlocItOff</h1>
-<p>Create and manage to-do lists with explosive consequences.</p>
-<%= link_to "Let's do this!", new_user_session_path, :class => 'navbar-link', :class => 'btn btn-primary' %>
+<% if user_signed_in? %>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1> Welcome back,  <%= current_user.email %>!</h1>
+        
+        <p>Make a list, complete the task, or it self destructs!</p>
+        <br>
+        <h4><%= link_to 'Click here to get busy.', users_path(current_user.id),:class => "btn btn-success" %></h4>
+  </div>
+</div>
+<% else %>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>BlocItOff</h1>
+        <p>Create and manage to-do lists with explosive consequences.</p>
+        <br>
+        <%= link_to "Let's do this!", new_user_session_path, :class => 'navbar-link',:class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

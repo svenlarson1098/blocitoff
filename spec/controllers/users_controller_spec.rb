@@ -8,7 +8,7 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    it "instantiates a new user" do
+    it "instantiates a current user" do
       get :show
       expect(assigns(:users)).to_not be_nil
     end
