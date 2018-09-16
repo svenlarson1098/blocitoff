@@ -6,6 +6,17 @@
   color: rgb(253, 251, 251);
 }
 body {
-  background: linear-gradient(#d6d6d6, #806652);
+  background: linear-gradient(#d6d6d6, #4e3522);
   height: 950px;
+  }
+
+input::placeholder { 
+  color: red; 
+  font-size: 1.1em; 
+  font-style: italic; 
+  }
+  
+  td:hover {
+    background-color:rgb(250, 129, 48);
+    color: rgb(253, 251, 251);
   }

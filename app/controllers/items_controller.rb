@@ -7,10 +7,10 @@ class ItemsController < ApplicationController
   
     if @item.save
       flash[:success] = "Item saved!"
-      redirct_to user_path(@user.id)
+      redirect_to user_path(@user.id)
     else
       flash[:alert] = "An error occurred saving this item. Please try again."
-      redirct_to user_path(@user.id)
+      redirect_to user_path(@user.id)
   end
 end
 end

@@ -1,9 +1,11 @@
 <div class="container-fluid">
-  <h3> Let's Make This List, <%= @user.email %>!</h3>
+<div class="jumbotron">
+  <h2> Let's Make That List, <%= @user.email %>!</h2>
     <% if current_user == nil %>
     <% elsif current_user.id == @user.id %>
+  </div>
       <div class="container">
-       <% render partial: 'items/form', locals: { user: @user, item: @item } %>
+       <%= render partial: 'items/form', locals: { user: @user, item: @item } %>
     </div>  
   <% end %>
     <div class="container">
@@ -15,12 +17,11 @@
 </div>
 
 <div class="container-fluid">
-  <h3>Tasks to be completed:<h3>
+  <h3>Tasks that need completion:<h3>
     <table class="table table-hover">
       <thead>
         <tr>
         <th>Description</th>
-        <th colspan="3"></th>
         </tr>
       </thead>
     <% @items.each do |item| %>
