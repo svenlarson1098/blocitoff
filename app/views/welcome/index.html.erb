@@ -5,7 +5,7 @@
         
         <p>Make a list, complete the task, or it self destructs!</p>
         <br>
-        <h4><%= link_to 'Click here to get busy.', items_create_path(current_user.id),:class => "btn btn-success" %></h4>
+        <h4><%= link_to 'Click here to get busy.', user_items_path(current_user.id),:class => "btn btn-success" %></h4>
   </div>
 </div>
 <% else %>
