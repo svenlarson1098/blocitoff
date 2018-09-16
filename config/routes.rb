@@ -1,21 +1,15 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users
-  
-  resources :users do
-    resources :items, :only => [:create]
-  end  
-    
-  get 'items/create'
-  
-  get 'users/show'
-  
+
+  post 'items/create'
+
   get 'welcome/index'
 
   get 'welcome/about'
-  
-  root 'items#create'
-  
+
+  root 'welcome#index'
+
 end
 
 # use :only to eliminate unneeded routes :only => [:some_index]
