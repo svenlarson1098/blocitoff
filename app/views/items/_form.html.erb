@@ -2,6 +2,7 @@
 <h3> Add Tasks </h3>
 
   <%= form_for [user, item] do |f| %>
+    <form class="form-inline">
     <div class="form_group">
       <%= f.text_field :name, class: 'form-control' , placeholder: "Enter New Task" %>
     </div>
@@ -9,6 +10,6 @@
     <div class="form group">
       <%= f.submit "Submit", class: 'btn btn-success' %>
     </div>
-    
+   </form> 
   <% end %>
 

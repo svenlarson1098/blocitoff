@@ -6,11 +6,24 @@ class ItemsController < ApplicationController
     @item.user_id = @user.id
   
     if @item.save
-      flash[:success] = "Item saved!"
-      redirect_to user_path(@user.id)
-    else
-      flash[:alert] = "An error occurred saving this item. Please try again."
+      flash[:success] = "Task saved!"
       redirect_to user_path(@user.id)
   end
 end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @user = Item.find(params[:id])
+    @item.destroy
+
+    if @item.destroy
+      flash[:success] = "Nice!! You knocked the #{@item.name} task off your list."
+      redirect_to user_path(@user_id)
+  end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 end

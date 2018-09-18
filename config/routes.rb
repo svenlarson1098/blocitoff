@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users do
-   resources :items, :only => [:create]
+   resources :items, :only => [:create, :destroy]
   end
   
-  post 'items/create'
+  #post 'items/create'
 
   get 'welcome/index'
 

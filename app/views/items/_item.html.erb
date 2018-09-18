@@ -1,5 +1,8 @@
 <tbody>
   <tr>
-    <td><%= item.name %></td>
+    <td id="item-<%= item.id %>"><%= item.name %></td>
+    <% if current_user.id == @user %>
+    <td><%= link_to "", item, method: :delete, remote => true, class: 'glyphicon glyphicon-check' %></td>
+    <% end %>
   </tr>
 </tbody>
