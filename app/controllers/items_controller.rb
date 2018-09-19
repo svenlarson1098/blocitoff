@@ -13,12 +13,12 @@ end
 
   def destroy
     @user = User.find(params[:user_id])
-    @user = Item.find(params[:id])
+    @item = Item.find(params[:id])
     @item.destroy
 
     if @item.destroy
       flash[:success] = "Nice!! You knocked the #{@item.name} task off your list."
-      redirect_to user_path(@user_id)
+      redirect_to user_path(@user.id)
   end
 
     respond_to do |format|
