@@ -27,3 +27,6 @@ end
     end
   end
 end
+
+# update_attribute method to update the created_at attribute on:
+# Item.last.update(created_at: 9.days.ago)

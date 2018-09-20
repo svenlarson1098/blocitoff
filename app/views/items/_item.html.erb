@@ -1,8 +1,9 @@
 <tbody id='item-<%= item.id %>'>
   <tr>
     <td><%= item.name %></td>
+    <td class="text-right"><%= distance_of_time_in_words(item.created_at, Time.now)%> ago </td>
     <% if current_user.id == user.id %>
-      <td class="text-center"><%= link_to "", user_item_path(user.id, item.id), method: :delete, class: 'glyphicon glyphicon-check', remote: true %></td>
+      <td class="text-center"><%= link_to "", user_item_path(user.id, item.id), method: :delete, class: 'glyphicon glyphicon-check ', remote: true %></td>
     <% end %>
   </tr>
 </tbody>
