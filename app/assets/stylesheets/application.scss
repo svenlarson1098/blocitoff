@@ -7,7 +7,7 @@
 }
 body {
   background: linear-gradient(#d6d6d6, #4e3522);
-  height: 1200px;
+  height: 1400px;
   }
 
 input::placeholder { 
@@ -19,4 +19,8 @@ input::placeholder {
   td:hover {
     background-color:rgb(250, 129, 48);
     color: rgb(253, 251, 251);
+  }
+ 
+  @-ms-viewport{
+    width: device-width;
   }
